@@ -1,0 +1,8 @@
+<!--miniprogram/pages/createCard/createCard.wxml-->
+<form bindsubmit="submitCard">
+  <input name='image' placeholder='Image link'/>
+  <input name="character" placeholder="Chinese Character" />
+  <input name="pinyin" placeholder="Pinyin" />
+  <input name="english" placeholder="English"/>
+  <button form-type='submit'>Submit</button>
+</form>
