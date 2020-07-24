@@ -11,17 +11,7 @@ exports.main = async (event, context) => {
   console.log(event)
   try {
     return await db.collection('cards').add({
-      data: {
-        // where does event.content come from??
-        image: event.image,
-        character: event.character,
-        pinyin: event.pinyin,
-        english: event.english
-        // image: "test_image",
-        // character: "char",
-        // pinyin: "pinyin",
-        // english: "word"
-      }
+      data: event.detail.value
     })
   } catch(e) {
     console.error(e)

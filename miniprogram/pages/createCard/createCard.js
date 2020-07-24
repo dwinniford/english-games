@@ -9,18 +9,12 @@ Page({
   },
 
   submitCard: function(event) {
+    // event.detail.value returns object with name value pairs
     wx.cloud.callFunction({
       name: 'saveFlashCard',
-      data: {
-        image: event.detail.value.image,
-        character: event.detail.value.character,
-        pinyin: event.detail.value.pinyin,
-        english: event.detail.value.english 
-      },
+      data: event, 
       success: (res) => {
-        console.log(res)
-        // data available at res.result 
-        // returns data from the form, but can't see it in the database
+        console.log(res);
         wx.navigateTo({
           url: '/pages/index/index',
         })
